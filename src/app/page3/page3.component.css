@@ -1,0 +1,233 @@
+.row-wrap{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(black, 0%, rgba(0,0,0,0.0))
+    
+}
+.safari{
+    min-height: 600px;
+}
+.background-image{
+    
+    background-color: white;
+
+}
+
+.text-heading{
+    padding: 15px;
+    width: 100%;
+    font-family: "exo";
+    font-weight: 500;
+    font-size: 200%;
+    text-align: center;
+    color: black;
+}
+.subheading{
+    padding: 15px;
+    width: 100%;
+    font-family: "exo";
+    font-size: 150%;
+    text-align: center;
+    color: black;
+}
+.heading{
+    padding-top: 5vh;
+    font-size: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.0),rgba(0,0,0,0.0), rgba(0,0,0,0), rgba(0,0,0,0));
+}
+.flex-container{
+    
+    /* background-color: rebeccapurple; */
+    width:  100%;
+    height: 500px;
+    display: flex;
+}
+.third{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    /* background-color: aqua; */
+
+    width: 100%;
+    height: fit-content;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.closing{
+    justify-self: center;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    margin-bottom: 5vh;
+
+    text-align: center;
+
+}
+
+.tight-card{
+
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+    max-height: 60vh;
+    min-height: fit-content;
+    margin: 20px;
+    /* background-color: azure; */
+    border-radius: 5px;
+    /* border-bottom: 1.6px solid white;*/
+}
+.tight-card-heading{
+    /* background: linear-gradient(268deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); */
+    background: linear-gradient(268deg, #4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
+
+    background-size: 200% 200%;
+
+    -webkit-animation: gradientScroll 7s ease infinite;
+    -moz-animation: gradientScroll 7s ease infinite;
+    animation: gradientScroll 7s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-align: center;
+    color: black;
+    /* mix-blend-mode: soft-light; */
+    font-weight: 800;
+    /* align-self: flex-start; */
+    font-size: 200%;
+    width: 100%;
+    /* background-color: azure; */
+}
+
+
+.description{
+    justify-self: flex-end;
+    color: black;
+    font-size: 130% ;
+    /* mix-blend-mode: soft-light; */
+}
+.line{
+    background-color: black;
+    width: 90%;
+}
+.first-card{
+    justify-content: flex-end;
+}
+
+.third-card{
+    justify-content: flex-start;
+}
+
+
+
+@-webkit-keyframes gradientScroll {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes gradientScroll {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes gradientScroll { 
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+
+@media only screen and (max-width: 320px){
+    .first-card{
+        justify-content: center;
+    }
+    .second-card{
+        justify-content: center;
+    }
+    .third-card{
+        justify-content: center;
+    }
+    .flex-container{
+        height: fit-content;
+        margin-top: 5vh;
+        flex-wrap: wrap;
+    }
+    .tight-card{
+        width: fit-content;
+        border-radius: 0;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+    .first-card{
+        justify-content: center;
+    }
+    .second-card{
+        justify-content: center;
+    }
+    .third-card{
+        justify-content: center;
+    }
+    .flex-container{
+        height: fit-content;
+        flex-wrap: wrap;
+        margin-top: 5vh;
+    }
+    .tight-card{
+        width: fit-content;
+        border-radius: 0;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+
+    .first-card{
+        
+        justify-content: center;
+    }
+    .second-card{
+        justify-content: center;
+    }
+    .third-card{
+        justify-content: center;
+    }
+    .flex-container{
+        height: fit-content;
+        flex-wrap: wrap;
+        margin-top: 5vh;
+    }
+    .tight-card{
+        font-size: 130%;
+        width: fit-content;
+        border-radius: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .tight-card{
+        max-height: 60vh;
+        border-radius: 0;
+    }
+    .description{
+        font-size: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1500px){
+    .tight-card{
+        max-height: 60vh;
+    }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1999px){
+    .second-card{
+        margin-left: -70px;
+        margin-right: -70px;
+    }
+}

@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+/* width */
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Raleway:400,700');
+
+@import url('https://fonts.googleapis.com/css?family=News+Cycle');
+
+@import url('https://fonts.googleapis.com/css?family=Economica|Exo:300');
+
+@font-face {
+	font-family: "good-times";
+	src: url("../src/font/good-times.regular.ttf");
+}
+
+
+html {
+
+	min-width:330px;
+	overflow-x: hidden;
+}
+body{
+	background-color: rgb(0,0,0);
+	min-width:330px;
+	width: 100%;
+	overflow-x: hidden;
+
+}
+
+/* ::-webkit-scrollbar {
+		width: 8px;
+}
+	
+
+::-webkit-scrollbar-track {
+	background-color: rgba(24,24,24.0.9);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.8); 
+	border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.9); 
+} */
+.orbitron{
+	font-family: "Orbitron";
+}
+
+.newscycle{
+	font-family: 'News Cycle', sans-serif;
+}
+
+.exo{
+	font-family: 'Exo', sans-serif;
+
+}
+.economica{
+		font-family: 'Economica', sans-serif;
+}
+
+.heading{
+    width: 100%;
+    font-size: 3vw;
+}
+.subheading{
+    width: 100%;
+    font-size: 1.5vw;
+
+}
+
+.transitional{
+	height: 6vh;
+	width: 100%;
+	/* background-color: red; */
+	background: linear-gradient(rgba(0,0,0,0.0), 70%, black);
+}

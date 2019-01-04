@@ -1,0 +1,70 @@
+<!-- Footer -->
+<footer class="page-footer font-small footer-main">
+
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left footer-container">
+
+      <!-- Grid row -->
+      <div class="row test">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+			<!-- Content -->
+			<h5 class="text-uppercase font-weight-bold">Check out our Social pages!</h5>
+			<div class="social">
+				<div class="social-container">
+					<p>See you in the SocialSpace!</p>
+					<div class="social-links">
+						<a class="link" target="_blank" href="https://www.instagram.com/latrepreneur"><img  class="social-img" src="../../assets/instagram.png"></a>
+						<a class="link" target="_blank" href="https://www.facebook.com/Social-Space-437543070109584"><img  class="social-img" src="../../assets/facebook.png"></a>
+						<a class="link" href="#home"><img   class="social-img" src="../../assets/logo.png"></a>
+					</div>
+				</div>
+				
+			</div>
+
+       
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mb-md-0 mb-3">
+			
+          <!-- Content -->
+				<div >
+					<h5 class="text-uppercase font-weight-bold">Frequently Asked Questions</h5>
+				
+					<div class="accordian-container">
+						<div class="accordian">
+							<div class="tab" *ngFor="let question of faqQuestions; index as i" (click)="openFaq(i)">
+								<h2 class="tab-heading exo">{{question}}</h2>
+								<div [ngClass]="currentFaq == i ? 'open-tab' : ''" class="tab-content exo">{{faqAnswers[i]}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+         
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Text -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+		<div class="links text-center">
+				Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+		</div>
+		<a href="socialspace.co.za"><img style="width: 25px; height: 25px" src="../../assets/logo.png"> Social Space</a>: 2018 Copyright ©
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->

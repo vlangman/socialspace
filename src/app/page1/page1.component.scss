@@ -1,0 +1,396 @@
+
+.landing-container{
+    margin-top: 25px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+	// background-color: aquamarine;
+	z-index: 1;
+	// margin-bottom: 50px;
+}
+
+.landing-info{
+    color: white;
+    width: 100%;
+    // background-color: orange;
+    display: flex;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.giga-text{
+    color: white;
+    font-family: 'Orbitron';
+    font-size: 500%;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+.landing-logo{
+    width: 100%;
+	// background-color: yellow;
+	display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 20px;
+}
+
+.phone-container{
+
+    // background-color: blueviolet;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-end;
+    // background-color: blue;
+    flex-grow: 1;
+    flex-shrink: 1;
+    z-index: 0;
+}
+.slogan-container{
+    background-color: transparent;
+    max-width: 60%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.slogan{
+    background-color: yellow;
+    width: fit-content;
+}
+.small-text{
+    text-align: left;
+    font-size: 100%;
+}
+.phone{
+    // background-color: orange;
+    background-image: url("../../assets/300iq.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    // height: 100%;
+    flex-grow: 1;
+    margin-top: -5px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    z-index: 1;
+}
+.iphone{
+    max-height: 600px;
+    grid-column-start:span 3;
+    grid-row-start:span 3;
+}
+.phone-logo{
+    background-image: url("../../assets/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    grid-column: 2;
+}
+.scrolling-content{
+    // background-color: red;
+    height: fit-content;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 2;
+}
+.scroll{
+    border: 0.01px inset black;
+    display: flex;
+    
+    animation-name: scroll;
+    animation-duration: 280s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+
+    -webkit-animation-name: scroll;
+    -webkit-animation-duration: 280s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: scroll;
+    -moz-animation-duration: 280s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -ms-animation-name: scroll;
+    -ms-animation-duration: 280s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+
+    margin-right: 13px;
+    border-radius: 2.2em;
+
+    width: 281px;
+    height: 580px;
+   
+    background-color: aqua;
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.40), 
+      rgba(0, 0, 0, 0.40)
+    ),
+    url("../../assets/scroll.png");
+    
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    
+    z-index: 1;
+}
+
+
+@keyframes scroll {
+    from {background-position:top;}
+    to {background-position:bottom;}
+}
+@-webkit-keyframes scroll {
+    from {background-position:top;}
+    to {background-position:bottom;}
+}
+
+@-moz-keyframes scroll {
+    from {background-position:top;}
+    to {background-position:bottom;}
+}
+
+.phone-info{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.launch{
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2rem;
+    border: none;
+    font-size: 200%;
+}
+
+.spaceman{
+	-webkit-animation-name: oscillate;
+    -webkit-animation-duration: 16000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: oscillate;
+    -moz-animation-duration: 16000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -ms-animation-name: oscillate;
+    -ms-animation-duration: 16000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: oscillate;
+    animation-duration: 16000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+        max-height: 600px;
+    
+}
+
+
+
+    @-ms-keyframes oscillate { 
+        0% { 
+            -ms-transform: rotate(-20deg); 
+		} 
+		50% { 
+            -ms-transform: rotate(20deg); 
+		}
+		100% { 
+            -ms-transform: rotate(-20deg); 
+        }
+    }
+    @-moz-keyframes oscillate {
+		0% { 
+            -moz-transform: rotate(-20deg); 
+		} 
+		50% { 
+			-moz-transform: rotate(20deg); 
+		}
+		100% { 
+            -moz-transform: rotate(-20deg); 
+        }
+    
+    }
+    @-webkit-keyframes oscillate { 
+		0% { 
+            -webkit-transform: rotate(-20deg); 
+		} 
+		50% { 
+			-webkit-transform: rotate(20deg); 
+		}
+		100% { 
+			-webkit-transform: rotate(-20deg); 
+        }
+   
+    }
+    @keyframes oscillate { 
+		0% { 
+            transform: rotate(-20deg); 
+		} 
+		50% { 
+            transform: rotate(20deg); 
+		}
+		100% { 
+            transform: rotate(-20deg); 
+        }
+      
+    }
+
+@media only screen and (max-width: 320px){
+    .phone-container{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .scroll{
+        width: 126px;
+        height: 258px;
+        border-radius: 0.9rem;
+        padding-bottom: -12px;
+    }
+    .slogan-container{
+        max-width: 100%;
+    }
+    .giga-text{
+        text-align: center;
+        font-size: 300%;
+    }
+    .launch{
+        margin-top: 10px;
+        font-size: 100%;
+    }
+    .small-text{
+        width: 100%;
+    }
+    .phone-logo{
+        margin-bottom: 10px;
+    }
+    .phone-logo{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+    .phone-container{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .phone{
+        padding-top: -5px;
+    }
+    .scroll{
+        width: 124px;
+        height: 257px;
+        border-radius: 0.8rem;
+        margin-bottom: 12px;
+        margin-top: -10px;
+        border-top: 4px solid black;
+    }
+    .slogan-container{
+        max-width: 100%;
+    }
+    .giga-text{
+        text-align: center;
+        font-size: 300%;
+    }
+    .launch{
+        margin-top: 10px;
+        font-size: 100%;
+    }
+    .small-text{
+        width: 100%;
+    }
+    .phone-logo{
+        margin-bottom: 10px;
+    }
+    .phone-logo{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+   
+    .small-text{
+        width: 100%;
+    }
+    .scroll{
+        width: 200px;
+        height: 412px;
+        border-radius: 1.5rem;
+    }
+    .phone-container{
+        margin-bottom: 100px;
+    }
+    .giga-text{
+        text-align: center;
+        font-size: 300%;
+    }
+   
+    .launch{
+        font-size: 100%;
+    }
+    .phone-logo{
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .small-text{
+        width: 85%;
+    }
+    .scroll{
+        width: 231px;
+        height: 475px;
+        border-radius: 1.7rem;
+    }
+    .phone-container{
+        margin-bottom: 150px;
+    }
+    .giga-text{
+        font-size: 400%;
+    }
+    .phone-logo{
+        margin-top: 50px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1999px){
+    .phone-logo{
+        margin-top: 50px;
+    }
+    .phone-container{
+        margin-bottom: 150px;
+    }
+    .small-text{
+        width: 50%;
+    }
+}

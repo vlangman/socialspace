@@ -1,0 +1,403 @@
+.background{
+    background: 
+	/* top, transparent red, faked with gradient */ 
+	linear-gradient(
+	  rgba(0, 0, 0, 0.7), 
+	  rgba(0, 0, 0, 0.0)
+	),
+	/* bottom, image */
+	url("../../assets/sunrise.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* min-height: 900px; */
+}
+.row-wrap {
+    /* margin-top: 50px; */
+    padding-top: 35px;
+    background: linear-gradient(black, 50%, rgba(0,0,0,0.0))
+}
+.main {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-left: 0;
+    min-height: fit-content;
+}
+
+.flex-center {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.packages-overlay {
+    height: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    margin-bottom: 8vh;
+    /* background-color: yellow; */
+}
+.package-overlay {
+    
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    overflow: visible;
+
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    height: 80%;
+    /* background-color: rebeccapurple; */
+}
+
+.image-container{
+    /* background-color: antiquewhite; */
+    transition: transform 0.4s ease-in-out;
+    margin-left: -50px;
+    margin-right: -50px;
+}
+
+
+
+.image-container:hover .highlight {
+    visibility: visible;
+    width: 66.6%;
+}
+.image-container:hover{
+
+    -ms-transform: scale(1.01); /* IE 9 */
+    -webkit-transform: scale(1.01); /* Safari */
+    transform: scale(1.05);
+}
+.package-overlay:hover .package-text {
+    -webkit-mask-image: linear-gradient(-90deg, rgba(0,0,0,.4) 20%, #000 20%, rgba(0,0,0,.4) 80%);
+
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+    animation-timing-function: linear;
+}
+
+.package-text{
+    width: 100%;
+    color: white;
+    text-align: left;
+    font-size: 120%;
+    font-family: "Orbitron"
+}
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+.highlight{
+    transition: all 0.4s ease-in-out;
+    margin-left: 5px;
+    height: 5px;
+    width: 1%;
+    background-color: yellow;
+    visibility: hidden;
+}
+.image{
+    /* max-width: 100%; */
+    max-height: 600px;
+    /* width: 100%; */
+    height: auto;
+    /* border: 1px solid black; */
+}
+.package{
+    height: 60%;
+
+   
+    border: 3px solid black;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    transform: skew(-20deg);
+}
+
+
+/* //LUNAR MODULE */
+.blend-text{
+    /* mix-blend-mode: ; */
+    font-weight: 700;
+    font-size: 100%;
+}
+.blend-text2:hover{
+    transform: scale(1.1);
+    padding-left: 7%;
+    background-color: rgba(0, 0, 0, 0.2)
+}
+.blend-text2{
+    /* mix-blend-mode: ; */
+    font-weight: 800;
+    font-size: 100%;
+
+}
+.tooltip{
+    width: 80%;
+    background-color: red;
+}
+
+
+.row-highlight{
+    width: 80%;
+    background-color: black;
+}
+.lunar-container{
+
+    color: black;
+    font-family: 'Orbitron';
+
+    background-attachment: fixed;
+    background-position: top right;
+    background-size: stretch;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+.starter{
+    background:
+        linear-gradient(to right,rgba(0,0,0,0.4),rgba(255,255,255,0.4)),
+        url("../../assets/moon.png");
+}
+.pro{
+    background:
+    linear-gradient(to right,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("../../assets/moonwalk.jpg");
+    background-size: cover;
+    color: white;
+
+
+}
+.grid-body{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 1fr;
+}
+.lunar-image{
+    /* background:
+    linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.75)
+    ),
+    url("../../assets/moonwalk.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background-color: red;
+    width: 100%;
+    height: 100%;
+
+}
+.heading{
+    font-size: 250%;
+}
+.subheading{
+    font-size: 180%;
+}
+.jumbotron{
+    background-color: transparent;
+}
+.jumbo-text{
+    font-size: 200%;
+    padding-left: 20px;
+}
+.list-group > .list-group-item{
+    background-color: transparent;
+    border: 0;
+}
+.cost{
+    margin-top: 20px;
+}
+.package-overlay{
+    display: flex;
+    
+}
+
+
+@media only screen and (max-width: 320px){
+    .packages-container{
+        height: 500px;
+    }
+    .package{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .package-overlay{
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+        width: 50%;      
+
+    }
+    .packages-overlay{
+        flex-wrap: wrap;
+        min-height: 300px;
+        justify-content: center;
+    }
+    .image{
+        /* max-width: 100%; */
+        max-height: 400px;
+    }
+    .blend-text{
+        text-align: center;
+    }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+    .packages-container{
+        height: 500px;
+    }
+    .package{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .package-overlay{
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+        width: 50%;       
+
+    }
+    .packages-overlay{
+        flex-wrap: wrap;
+        min-height: 300px;
+        justify-content: center;
+    }
+    .image{
+        /* max-width: 100%; */
+        max-height: 400px;
+    }
+    .blend-text{
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+  
+    .packages-container{
+        height: 600px;
+    }
+    .package{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .package-overlay{
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+        width: 50%;
+    }
+  
+    .packages-overlay{
+        margin-left: 0;
+        flex-wrap: wrap;
+        /* min-height: 700px; */
+        justify-content: center;
+        width: 100%;
+
+    }
+    .image{
+        /* max-width: 100%; */
+        max-height: 500px;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .packages-container{
+        height: 500px;
+    }
+    .package{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .image{
+        /* max-width: 100%; */
+        max-height: 500px;
+
+    }
+    .package-overlay{
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+    .packages-overlay{
+        margin-left: 0;
+        /* min-height: 800px; */
+        width: 100%;
+    }
+
+
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1500px) {
+    .package{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .package-overlay{
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+    .packages-overlay{
+        width: 80%;
+        /* min-height: 900px; */
+    }
+
+
+
+}
+@media only screen and (min-width: 1500px) and (max-width: 1999px){
+    
+    .package{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .package-overlay{
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+    .packages-overlay{
+        width: 80%;
+        /* min-height: 900px; */
+    }
+
+
+}
+
+
+@-webkit-keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
+
+@keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
