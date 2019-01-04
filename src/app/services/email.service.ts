@@ -47,26 +47,28 @@ export class EmailService {
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Access-Control-Allow-Headers': 'Access-Control-Allow-Origin, Content-Type,  X-Requested-With, Access-Control-Allow-Headers, Authorization, Origin',				
-				'Access-Control-Allow-Origin': 'https://socialspace.co.za',
-				'Content-Type':'application/x-www-form-urlencoded'
+				'Access-Control-Allow-Origin': '*',
 			})
 		};
 
-		const baseUrl1 = "https://www.google.com/recaptcha/api/siteverify";
-		const baseUrl2 = "https://us-central1-socialspace-9c07d.cloudfunctions.net/sendEmail/email";
-
+		const baseUrl1 = "18.216.55.184:3000/siteverify";
+		const baseUrl2 = "18.216.55.184:3000/email";
 	
-		// this.http.post(baseUrl1, obj2, httpOptions).subscribe(data=>{
-			// console.log("sending mail2");
-			// if (data['success'] == true){
+		console.log("sending mail1");
+	
+		this.http.post(baseUrl1, obj2, httpOptions).subscribe(data=>{
+			console.log("sending mail2");
+			if (data['success'] == true){
 				if (this.canSend){
-					console.log("sending mail");
 					this.http.post(baseUrl2,obj, httpOptions).subscribe(data=>{
 						console.log(data);
 					});
 				}
-			// }
-		// })
+			
+			}else{
+				console.log("captcha failed");
+			}
+		})
 
 	
 
