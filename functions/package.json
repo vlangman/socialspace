@@ -1,22 +1,19 @@
 {
   "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "version": "1.0.0",
+  "description": "serves the angular client. Run with npm start / nodemon",
+  "main": "index.js",
   "scripts": {
-    "serve": "firebase serve --only functions",
-    "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "firebase-admin": "~6.0.0",
-    "firebase-functions": "^2.1.0",
     "nodemailer": "^5.0.0",
-    "request": "^2.88.0",
     "request-promise": "^4.2.2"
-  },
-  "private": true
+  }
 }

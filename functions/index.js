@@ -28,8 +28,7 @@ app.get('/test', (req, res) => {
 });
 
 app.post('/validate_captcha', (req, res) => {
-	var verify = req.body.verify;
-
+    var verify = req.body.verify;
 	const options = {
 		method: 'POST',
 		uri: 'https://www.google.com/recaptcha/api/siteverify',
@@ -46,7 +45,7 @@ app.post('/validate_captcha', (req, res) => {
 	});
 
   app.post('/email', (req, res)=>{
-
+    console.log("new email request for: "+ email );
 	var name = req.body.name;
 	var email = req.body.emailAddress;
 	var details = req.body.details;
@@ -63,7 +62,7 @@ app.post('/validate_captcha', (req, res) => {
         text: '',
         html: htmlOUT
     };
-
+   
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
@@ -74,4 +73,4 @@ app.post('/validate_captcha', (req, res) => {
 
 });
 
-app.listen(3000);
+app.listen(3000, function(){console.log("server listening on port 3000")});
