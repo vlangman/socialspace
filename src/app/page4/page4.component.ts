@@ -39,9 +39,7 @@ export class Page4Component implements OnInit {
   }
 
   onSubmit(){
-	var canSubmit: Boolean = true;
-	console.log(this.contactForm);
-	
+	var canSubmit: Boolean = true;	
 
     var	contactform = {
 		name: this.contactForm.value.name,
@@ -73,8 +71,8 @@ export class Page4Component implements OnInit {
 
     // stop here if form is invalid
     if (this.contactForm.invalid == true) {
-		return;
-	}
+			return;
+		}
 
 
    	console.log(this.contactForm.value);

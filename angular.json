@@ -48,7 +48,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "social-space:build"
+            "browserTarget": "social-space:build",
+              "sslKey": "src/environments/ss.key",
+              "sslCert": "src/environments/ss.crt"
           },
           "configurations": {
             "production": {

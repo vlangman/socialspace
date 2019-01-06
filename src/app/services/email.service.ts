@@ -38,10 +38,6 @@ export class EmailService {
 			details : quoteReq.details,
 			instagram : quoteReq.instagram,
 		}
-		const obj2 = {
-			secret: '6Lepj4YUAAAAAAkRXCXD5fJqLLvkFju6zlMsGvhz',
-			response: captchaResponse,
-		}	
 
 	
 		const httpOptions = {
@@ -51,13 +47,11 @@ export class EmailService {
 			})
 		};
 
-		const baseUrl1 = "18.216.55.184:3000/siteverify";
+		const baseUrl1 = "18.216.55.184:3000/validate_captcha";
 		const baseUrl2 = "18.216.55.184:3000/email";
-	
-		console.log("sending mail1");
-	
-		this.http.post(baseUrl1, obj2, httpOptions).subscribe(data=>{
-			console.log("sending mail2");
+		
+		this.http.post(baseUrl1, {'response': captchaResponse}, httpOptions).subscribe(data=>{
+			console.log("sending mail");
 			if (data['success'] == true){
 				if (this.canSend){
 					this.http.post(baseUrl2,obj, httpOptions).subscribe(data=>{

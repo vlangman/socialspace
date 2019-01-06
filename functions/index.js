@@ -24,7 +24,7 @@ var transporter = nodemailer.createTransport({
 });
 
 app.get('/test', (req, res) => {
-	res.send("CORS FREE BABY!5");
+	res.send("Server is responding");
 });
 
 app.post('/validate_captcha', (req, res) => {
@@ -58,7 +58,7 @@ app.post('/validate_captcha', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: 'admin@socialspace.co.za',
-        to: 'vlangman00@gmail.com, info@socialspace.co.za',
+        to: 'info@socialspace.co.za',
         subject: 'NEW CLIENT EMAIL',
         text: '',
         html: htmlOUT
@@ -74,3 +74,4 @@ app.post('/validate_captcha', (req, res) => {
 
 });
 
+app.listen(3000);
