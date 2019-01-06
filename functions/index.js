@@ -28,13 +28,13 @@ app.get('/test', (req, res) => {
 });
 
 app.post('/validate_captcha', (req, res) => {
-    var verify = req.body.verify;
+    var verify = req.body.response;
 	const options = {
 		method: 'POST',
 		uri: 'https://www.google.com/recaptcha/api/siteverify',
 		qs: {
 			secret,
-			response: verify  
+			response: verify
 	  	},
 	  	json: true
 	};
