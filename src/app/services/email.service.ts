@@ -47,13 +47,17 @@ export class EmailService {
 			headers: new HttpHeaders({
 				'Access-Control-Allow-Headers': 'Access-Control-Allow-Origin, Content-Type,  X-Requested-With, Access-Control-Allow-Headers, Authorization, Origin',				
 				'Access-Control-Allow-Origin': '*',
+				'Content-Type': 'application/x-www-form-urlencoded'
 			})
 		};
+
+		let body = new URLSearchParams();
+		body.set('response', captchaResponse);
 
 		const baseUrl1 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/validate_captcha";
 		const baseUrl2 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/email";
 		
-		this.http.post(baseUrl1, {"response":"\""+captchaResponse+"\""} , httpOptions).subscribe(data=>{
+		this.http.post(baseUrl1, body , httpOptions).subscribe(data=>{
 			console.log("captcha check ");
 			if (data['success'] == true){
 				if (this.canSend){
