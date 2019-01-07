@@ -17,7 +17,11 @@ export class EmailService {
   	sendQuote(quoteReq: contactRequest, captchaResponse: string){
 
 
-	
+		console.log("-----------THE CAPTCHA RESPONSE----------:");
+		console.log(captchaResponse);
+		console.log("-------------------");
+
+
 
 		if (captchaResponse != ""){
 			this.canSend = true;
