@@ -1,8 +1,9 @@
-// The Cloud Functions for Firebase SDK to create Cloud Functions and setup triggers.
+
 const express = require('express');
 var rp = require('request-promise');
 const cors = require('cors');
-// The Firebase Admin SDK to access the Firebase Realtime Database.
+var fs = require('fs');
+var https = require('https');
 const bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
@@ -70,13 +71,16 @@ app.post('/validate_captcha', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
-            res.status(404).send(error);
+            res.send(error);
         }
         console.log('Message sent: %s', info.messageId);
-        res.status(200).send("Message successfully sent");
+        res.send("Message successfully sent");
     });
 
 });
 
-
-app.listen(3000 ,function(){console.log("server listening on port 3000")});
+https.createServer({
+    key: fs.readFileSync('../src/environments/ssKey.pem'),
+    cert: fs.readFileSync('../src/environments/ssSSL.pem')
+  }, app)
+  .listen(3000 ,function(){console.log("server listening on port 3000")});
