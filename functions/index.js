@@ -10,6 +10,7 @@ var nodemailer = require('nodemailer');
 const app = express();
 app.use(cors({ origin: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const secret = '6Lepj4YUAAAAAAkRXCXD5fJqLLvkFju6zlMsGvhz';
 
@@ -29,8 +30,8 @@ app.get('/test', (req, res) => {
 
 app.post('/validate_captcha', (req, res) => {
     console.log("NEW CAPTCHA VALIDATION");
-    console.log(req.body);
     var verify = req.body.response;
+    console.log(req.body.response);
 	const options = {
 		method: 'POST',
 		uri: 'https://www.google.com/recaptcha/api/siteverify',
@@ -69,8 +70,10 @@ app.post('/validate_captcha', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
+            res.status(404).send(error);
         }
         console.log('Message sent: %s', info.messageId);
+        res.status(200).send("Message successfully sent");
     });
 
 });
