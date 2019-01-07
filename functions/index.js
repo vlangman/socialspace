@@ -28,6 +28,8 @@ app.get('/test', (req, res) => {
 });
 
 app.post('/validate_captcha', (req, res) => {
+    console.log("NEW CAPTCHA VALIDATION");
+    console.log(req.body);
     var verify = req.body.response;
 	const options = {
 		method: 'POST',
