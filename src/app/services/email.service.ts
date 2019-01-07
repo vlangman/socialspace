@@ -17,12 +17,6 @@ export class EmailService {
   	sendQuote(quoteReq: contactRequest, captchaResponse: string){
 
 
-		console.log("-----------THE CAPTCHA RESPONSE----------:");
-		console.log(captchaResponse);
-		console.log("-------------------");
-
-
-
 		if (captchaResponse != ""){
 			this.canSend = true;
 		} else {
@@ -45,25 +39,33 @@ export class EmailService {
 
 		const httpOptions = {
 			headers: new HttpHeaders({
-				'Access-Control-Allow-Headers': 'Access-Control-Allow-Origin, Content-Type,  X-Requested-With, Access-Control-Allow-Headers, Authorization, Origin',				
-				'Access-Control-Allow-Origin': '*',
 				'Content-Type': 'application/x-www-form-urlencoded'
 			})
 		};
+		
+		const httpOptions2 = {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			})
+		}
 
 		let body = new URLSearchParams();
 		body.set('response', captchaResponse);
 
 		const baseUrl1 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/validate_captcha";
 		const baseUrl2 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/email";
+
+		//testing urls
+		// const baseUrl1 = "http://127.0.0.1:3000/validate_captcha";
+		// const baseUrl2 = "http://127.0.0.1:3000/email";
 		
-		this.http.post(baseUrl1, body , httpOptions).subscribe(data=>{
+		this.http.post(baseUrl1, body.toString(),httpOptions).subscribe(data=>{
 			console.log("captcha check ");
 			if (data['success'] == true){
 				if (this.canSend){
 					console.log("sending mail");
 
-					this.http.post(baseUrl2,obj, httpOptions).subscribe(data=>{
+					this.http.post(baseUrl2,obj, httpOptions2).subscribe(data=>{
 						console.log(data);
 					});
 				}
