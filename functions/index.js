@@ -57,7 +57,7 @@ app.post('/validate_captcha', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: 'admin@socialspace.co.za',
-        to: 'info@socialspace.co.za',
+        to: 'vlangman00@gmail.com',
         subject: 'NEW CLIENT EMAIL',
         text: '',
         html: htmlOUT
@@ -73,4 +73,5 @@ app.post('/validate_captcha', (req, res) => {
 
 });
 
-app.listen(3000, function(){console.log("server listening on port 3000")});
+
+app.listen(3000 ,function(){console.log("server listening on port 3000")});
