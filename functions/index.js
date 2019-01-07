@@ -61,7 +61,7 @@ app.post('/validate_captcha', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: 'admin@socialspace.co.za',
-        to: 'vlangman00@gmail.com',
+        to: 'info@socialspace.co.za',
         subject: 'NEW CLIENT EMAIL',
         text: '',
         html: htmlOUT
@@ -71,10 +71,10 @@ app.post('/validate_captcha', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
-            res.send(error);
+            res.send({success: error});
         }
         console.log('Message sent: %s', info.messageId);
-        res.send("Message successfully sent");
+        res.send({success:"Message successfully sent"});
     });
 
 });
