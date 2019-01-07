@@ -43,7 +43,9 @@ export class EmailService {
 			instagram : quoteReq.instagram,
 		}
 
-	
+		const captcha = {
+			response: captchaResponse
+		}	
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Access-Control-Allow-Headers': 'Access-Control-Allow-Origin, Content-Type,  X-Requested-With, Access-Control-Allow-Headers, Authorization, Origin',				
@@ -54,7 +56,7 @@ export class EmailService {
 		const baseUrl1 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/validate_captcha";
 		const baseUrl2 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/email";
 		
-		this.http.post(baseUrl1, {"response": captchaResponse}, httpOptions).subscribe(data=>{
+		this.http.post(baseUrl1, JSON.stringify(captcha) , httpOptions).subscribe(data=>{
 			console.log("sending mail");
 			if (data['success'] == true){
 				if (this.canSend){
