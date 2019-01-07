@@ -47,8 +47,8 @@ export class EmailService {
 			})
 		};
 
-		const baseUrl1 = "127.0.0.1:3000/validate_captcha";
-		const baseUrl2 = "127.0.0.1:3000/email";
+		const baseUrl1 = "18.216.55.184:3000/validate_captcha";
+		const baseUrl2 = "18.216.55.184:3000/email";
 		
 		this.http.post(baseUrl1, {'response': captchaResponse}, httpOptions).subscribe(data=>{
 			console.log("sending mail");
