@@ -59,12 +59,12 @@ export class EmailService {
 		body2.append('instagram', quoteReq.instagram);
 
 
-		// const baseUrl1 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/validate_captcha";
-		// const baseUrl2 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/email";
+		const baseUrl1 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/validate_captcha";
+		const baseUrl2 = "http://ec2-18-216-55-184.us-east-2.compute.amazonaws.com:3000/email";
 
 		//testing urls
-		const baseUrl1 = "http://127.0.0.1:3000/validate_captcha";
-		const baseUrl2 = "http://127.0.0.1:3000/email";
+		// const baseUrl1 = "http://127.0.0.1:3000/validate_captcha";
+		// const baseUrl2 = "http://127.0.0.1:3000/email";
 		
 		this.http.post(baseUrl1, body.toString(),httpOptions).subscribe(data=>{
 			console.log("captcha check ");
