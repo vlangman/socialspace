@@ -18,6 +18,9 @@ import { Page4Component } from './page4/page4.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
+import { DeviceDetectorService } from 'ngx-device-detector';
+
+
 var  config = {
   apiKey: "AIzaSyDOcEYXrbtgSZvalIrsEfYZB2t5EdhSyLQ",
   authDomain: "socialspace.co.za",
@@ -45,7 +48,7 @@ var  config = {
     NgbModule,
     ScrollToModule.forRoot(),
   ],
-  providers: [AngularFireFunctions],
+  providers: [AngularFireFunctions,DeviceDetectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

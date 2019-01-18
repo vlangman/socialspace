@@ -1,5 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { WebpService } from '../services/webp.service';
 
 @Component({
 	selector: 'app-page2',
@@ -7,11 +8,13 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./page2.component.css']
 })
 export class Page2Component implements OnInit {
+	WebpSupported: boolean = false;
 
-	constructor(private modalService: NgbModal) { }
+	constructor(private modalService: NgbModal, private webpService: WebpService) { }
 	closeResult: string;
 
 	ngOnInit() {
+		this.WebpSupported = this.webpService.webpSupport();
 	}
 
 	open(content) {

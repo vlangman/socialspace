@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WebpService } from '../services/webp.service';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  WebpSupported: boolean;
 
-  constructor() { }
 
+  constructor(private webp: WebpService) { }
+
+  
   ngOnInit() {
+   
+    this.WebpSupported = this.webp.webpSupport();
   }
 
 }

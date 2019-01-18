@@ -45,6 +45,23 @@
     background-image: url("../../assets/cosmos.jpg");
     background-size: cover;
 }
+.contact-us-webp{
+    transition: all 2s ease-in-out;
+
+	width: 100%;
+    height: 100%;
+    /* background-color: black; */
+    flex-grow: 1;
+    flex-shrink: 1;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: none; */
+    background-image: url("../../assets/cosmos.webp");
+    background-size: cover;
+}
 
 .contact-us-active{
     transition: all 2s ease-in-out;

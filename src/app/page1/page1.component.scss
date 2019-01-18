@@ -87,6 +87,21 @@
     grid-template-columns: 1fr 3fr 1fr;
     z-index: 1;
 }
+.phone-webp{
+    // background-color: orange;
+    background-image: url("../../assets/300iq.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    // height: 100%;
+    flex-grow: 1;
+    margin-top: -5px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    z-index: 1;
+}
 .iphone{
     max-height: 600px;
     grid-column-start:span 3;
@@ -94,6 +109,17 @@
 }
 .phone-logo{
     background-image: url("../../assets/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    grid-column: 2;
+}
+.phone-logo-webp{
+    margin-top: 50px;
+    background-image: url("../../assets/logo.webp");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -139,6 +165,52 @@
     margin-right: 13px;
     border-radius: 2.2em;
 
+    width: 280px;
+    height: 576px;
+   
+    background-color: aqua;
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.40), 
+      rgba(0, 0, 0, 0.40)
+    ),
+    url("../../assets/scroll.png");
+    
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    
+    z-index: 1;
+}
+
+.scroll-webp{
+    border: 0.01px inset black;
+    display: flex;
+    
+    animation-name: scroll;
+    animation-duration: 280s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+
+    -webkit-animation-name: scroll;
+    -webkit-animation-duration: 280s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: scroll;
+    -moz-animation-duration: 280s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -ms-animation-name: scroll;
+    -ms-animation-duration: 280s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+
+    margin-right: 13px;
+    border-radius: 2.2em;
+
     width: 281px;
     height: 580px;
    
@@ -148,7 +220,7 @@
       rgba(0, 0, 0, 0.40), 
       rgba(0, 0, 0, 0.40)
     ),
-    url("../../assets/scroll.png");
+    url("../../assets/scroll.webp");
     
     background-size: cover;
     background-position: top;
@@ -211,7 +283,7 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
-        max-height: 600px;
+    max-height: 600px;
     
 }
 

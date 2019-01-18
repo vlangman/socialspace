@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,  Validators, FormBuilder } from '@angular/forms';
 import { EmailService } from '../services/email.service';
+import { WebpService } from '../services/webp.service';
 
 @Component({
   selector: 'app-page4',
@@ -12,18 +13,19 @@ export class Page4Component implements OnInit {
   submitted = false;
   captchaValid: string = "";
   showGalaxy:  boolean = false;
-  backgroundImage : string = "../../assets/nebula.jpg";
 
   contactForm: FormGroup;
 
   nameValid: boolean = true;
   emailValid: boolean = true;
-  instagramValid: boolean = true;
+	instagramValid: boolean = true;
+	
+	WebpSupported: boolean;
 
-  constructor(private formbuilder: FormBuilder, private emailService: EmailService) { }
+  constructor(private formbuilder: FormBuilder, private emailService: EmailService,private webpService : WebpService) { }
 
   ngOnInit() {
-
+		this.WebpSupported = this.webpService.webpSupport();
     this.contactForm = this.formbuilder.group({
       name: new FormControl('', [Validators.required]),
       emailAddress: new FormControl('',[Validators.required, Validators.email]),

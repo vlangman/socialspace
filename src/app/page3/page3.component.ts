@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebpService } from '../services/webp.service';
 
 @Component({
   selector: 'app-page3',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page3.component.css']
 })
 export class Page3Component implements OnInit {
+  WebpSupported: boolean;
 
-  constructor() { }
+
+  constructor(private webpService : WebpService) { }
 
   ngOnInit() {
+    this.WebpSupported = this.webpService.webpSupport();
   }
 
 }

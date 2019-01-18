@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=News+Cycle');
 
 @import url('https://fonts.googleapis.com/css?family=Economica|Exo:300');
-
+@import "~bootstrap/dist/css/bootstrap.css";
 @font-face {
 	font-family: "good-times";
 	src: url("../src/font/good-times.regular.ttf");

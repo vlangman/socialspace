@@ -2,7 +2,8 @@
 	<div class="row">
 		<div class="landing-container">
 			<div class="navbar"><app-navbar></app-navbar></div>
-			<div class="landing-image-container">
+		
+			<div  [ngClass]="WebpSupported ? 'landing-image-container-webp': 'landing-image-container'" class="landing-image-container">
 				<div class="landing-image"></div>
 			</div>
 			<app-page1></app-page1>

@@ -1,6 +1,6 @@
 
 
-<div class="container-fluid background" id="packagesContainer" #packagesContainer>
+<div [ngClass]=" WebpSupported ? 'background-webp':'background'" class="container-fluid" id="packagesContainer" #packagesContainer>
 	<div class="row row-wrap"  id="PackagesPage" #PackagesPage>
 		<h1 class="text-white text-center heading exo">Packages</h1>
 		<p class="lead text-white text-center subheading exo">
@@ -13,13 +13,16 @@
 					<div class="package-overlay" >
 				
 							<div class="image-container" (click)="open(starter)">
-								<img class="image" src="../../assets/1.png"/>
+								<img *ngIf="!WebpSupported" class="image" src="../../assets/1.png"/>
+								<img *ngIf="WebpSupported" class="image" src="../../assets/1.webp"/>
+
 								<div class="highlight"></div>
 								<h2 class="package-text">Starter</h2>
 							</div>
 
 							<div class="image-container" (click)="open(pro)">
-								<img class="image" src="../../assets/3.png"/>
+								<img *ngIf="!WebpSupported" class="image"  src="../../assets/3.png"/>
+								<img *ngIf="WebpSupported" class="image"  src="../../assets/3.webp"/>
 								<div class="highlight"></div>
 								<h2 class="package-text">Pro</h2>
 							</div>
@@ -34,7 +37,7 @@
 
 
 <ng-template #pro let-modal>
-	<div class="lunar-container pro">
+	<div [ngClass]="WebpSupported ? 'pro-webp': 'pro'" class="lunar-container">
 		<div class="modal-header">
 			<h3 class="modal-title blend-text" id="modal-basic-title">Pro Package</h3>
 			<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -43,7 +46,7 @@
 		</div>
 		<div class="modal-body">
 				<div class="jumbotron jumbotron-fluid">
-					<div class="container">
+					<div class="container packageText">
 						<h1 class="jumbo-text blend-text">750+ Targeted New Followers per Month</h1>
 						<hr class="row-highlight"/>
 						<p class="lead blend-text">Reach up to 45k Targeted Instagram Users. Up to 45 000 Instagram users per month from your target audience will become aware of you through our system and marketing efforts.</p>
@@ -90,14 +93,14 @@
 		</div>
 		<div class="modal-footer">
 			<!-- <p class="small text-left w-100"> packages availiable in 3, 6 and 12 month contracts only</p> -->
-			<button type="button" class="btn btn-outline-white" (click)="modal.close('Close button click')">close</button>
+			<button type="button" class="btn btn-outline-light" (click)="modal.close('Close button click')">close</button>
 		</div>
 	</div>
 </ng-template>
 
 
 <ng-template #starter let-modal>
-		<div class="lunar-container starter">
+		<div [ngClass]="WebpSupported ? 'starter-webp': 'starter'" class="lunar-container">
 			<div class="modal-header">
 				<h3 class="modal-title blend-text" id="modal-basic-title">Starter Package</h3>
 				<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -106,8 +109,10 @@
 			</div>
 			<div class="modal-body">
 					<div class="jumbotron jumbotron-fluid">
-						<div class="container">
+						<div class="container packageText">
+						
 							<h1 class="jumbo-text blend-text">250+ Targeted New Followers per Month</h1>
+							<h4 class="orbitron offer"> Only R500 For First Month – limited time offer</h4>
 							<hr class="row-highlight"/>
 							<p class="lead blend-text">Reach up to 15k Targeted Instagram Users. Up to 15 000 Instagram users per month from your target audience will become aware of you through our system and marketing efforts.</p>
 				
@@ -145,6 +150,7 @@
 								</li>
 							
 							</ul>
+							
 							<h3 class="display-6 cost"><kbd>R750 p/m</kbd></h3>
 						</div>
 					

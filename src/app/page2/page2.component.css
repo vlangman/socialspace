@@ -17,6 +17,25 @@
     flex-direction: column;
     /* min-height: 900px; */
 }
+.background-webp{
+    background: 
+	/* top, transparent red, faked with gradient */ 
+	linear-gradient(
+	  rgba(0, 0, 0, 0.7), 
+	  rgba(0, 0, 0, 0.0)
+	),
+	/* bottom, image */
+	url("../../assets/sunrise.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* min-height: 900px; */
+}
 .row-wrap {
     /* margin-top: 50px; */
     padding-top: 35px;
@@ -171,17 +190,27 @@
 }
 .starter{
     background:
-        linear-gradient(to right,rgba(0,0,0,0.4),rgba(255,255,255,0.4)),
+        linear-gradient(to right,rgba(0,0,0,0.4),rgba(255,255,255,0.8),rgba(255,255,255,0.8)),
         url("../../assets/moon.png");
+}
+.starter-webp{
+    background:
+        linear-gradient(to right,rgba(0,0,0,0.4),rgba(255,255,255,0.8),rgba(255,255,255,0.8)),
+        url("../../assets/moon.webp");
 }
 .pro{
     background:
-    linear-gradient(to right,rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    linear-gradient(to right,rgba(0,0,0,0.6),rgba(0,0,0,1)),
     url("../../assets/moonwalk.jpg");
     background-size: cover;
     color: white;
-
-
+}
+.pro-webp{
+    background:
+    linear-gradient(to right,rgba(0,0,0,0.6),rgba(0,0,0,1)),
+    url("../../assets/moonwalk.webp");
+    background-size: cover;
+    color: white;
 }
 .grid-body{
     display: grid;
@@ -211,6 +240,9 @@
 .jumbotron{
     background-color: transparent;
 }
+.packageText{
+    font-size: 120%;
+}
 .jumbo-text{
     font-size: 200%;
     padding-left: 20px;
@@ -225,6 +257,13 @@
 .package-overlay{
     display: flex;
     
+}
+.offer{
+    border-radius: 5px;
+    padding: 8px;
+    background-color: azure;
+    width: 100%; text-align: center;
+    font-weight: 700
 }
 
 

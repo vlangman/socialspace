@@ -6,9 +6,9 @@
 			<div class="landing-info">
 					<div class="phone-container">
 						<div class="scrolling-content">
-							<div class="scroll">
-								<div class="phone">
-									<div class="phone-logo"></div>
+							<div [ngClass]="WebpSupported ? 'scroll-webp': 'scroll'" >
+								<div [ngClass]="WebpSupported ? 'phone-webp': 'phone'">
+									<div [ngClass]="WebpSupported ? 'phone-logo-webp': 'phone-logo'"></div>
 									<div class="phone-info">
 										<button type="button" (click)="scrollToPackages()" class="btn-lg btn-primary launch exo">Launch</button>
 									</div>

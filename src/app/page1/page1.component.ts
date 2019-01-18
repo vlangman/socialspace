@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ScrollLinkService } from '../services/scroll-link.service';
-import { ScrollToConfigOptions, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
-
+import { ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
+import { WebpService } from '../services/webp.service';
 
 const packages: ScrollToConfigOptions = {
   // container: 'packagesContainer',
@@ -19,10 +19,14 @@ const packages: ScrollToConfigOptions = {
 })
 export class Page1Component implements OnInit {
 
-  constructor(private scrollService: ScrollLinkService) { }
+  WebpSupported: boolean;
+
+  constructor(private scrollService: ScrollLinkService, private webpService: WebpService) { }
 
   ngOnInit() {
+    this.WebpSupported = this.webpService.webpSupport();
   }
+  
 
     
   public scrollToPackages(){

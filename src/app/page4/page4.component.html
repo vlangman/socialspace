@@ -3,9 +3,8 @@
     <div  class="row">
 
         <div class="main-container">
-            <div class="contact-us" [ngStyle]="{'background-image': backgroundImage}" [ngClass]="showGalaxy ? 'contact-us-active':''">
+            <div class="contact-us"  [ngClass]="showGalaxy ? 'contact-us-active':''">
                 <div class="form-container" [ngClass]="showGalaxy ? 'form-container-active':'' ">
-                    
                     <form  class="contact-form" [ngClass]="showGalaxy ? 'contact-form-active':'contact-form-static'" [formGroup]="contactForm" (ngSubmit)="onSubmit() ">
                         <div class="form-row">
                                 <div class="col">
