@@ -79,12 +79,24 @@ app.post('/validate_captcha', (req, res) => {
 
 });
 
+app.all('*', function(req, res) {
+    res.redirect("https://socialspace.co.za");
+});
+
+app.use(function(request, response){
+    if(!request.secure){
+      response.redirect("https://socialspace.co.za");
+    }
+});
+
+
+
 https.createServer(
-    {
-        key: fs.readFileSync('./key.pem'),
-        cert: fs.readFileSync('./ssl.pem')
-    }, app
+    // {
+    //     key: fs.readFileSync('./key.pem'),
+    //     cert: fs.readFileSync('./ssl.pem')
+    // }, app
     )
-.listen(3000 ,function(){console.log("server listening on port 3000")});
+.listen(80 ,function(){console.log("server listening on port 80, REST API & redirecting non secure reqs to https")});
 
 
