@@ -79,10 +79,12 @@ app.post('/validate_captcha', (req, res) => {
 
 });
 
-https.createServer({
-        key: fs.readFileSync('./key.pem'),
-        cert: fs.readFileSync('./ssl.pem')
-    }, app)
+https.createServer(
+    // {
+    //     key: fs.readFileSync('./key.pem'),
+    //     cert: fs.readFileSync('./ssl.pem')
+    // }, app
+    )
 .listen(3000 ,function(){console.log("server listening on port 3000")});
 
 
