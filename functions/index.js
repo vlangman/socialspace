@@ -92,10 +92,10 @@ app.use(function(request, response){
 
 
 https.createServer(
-    // {
-    //     key: fs.readFileSync('./key.pem'),
-    //     cert: fs.readFileSync('./ssl.pem')
-    // }, app
+    {
+        key: fs.readFileSync('./key.pem'),
+        cert: fs.readFileSync('./ssl.pem')
+    }, app
     )
 .listen(80 ,function(){console.log("server listening on port 80, REST API & redirecting non secure reqs to https")});
 
