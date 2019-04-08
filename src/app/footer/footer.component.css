@@ -1,6 +1,6 @@
 .footer-container{
     color: white;
-    background-color: rgba(24, 24, 24, 0.8);
+    background-color: rgba(22, 22, 22, 0.95);
     padding-top: 2vh;
  
 }
@@ -48,8 +48,8 @@
 
 }
 .footer-copyright{
-    background-color: rgba(24, 24, 24, 0.8);
-
+    background-color: rgba(22, 22, 22, 0.98);
+    color: white;
 }
 .panel{
     border: 2px solid red;

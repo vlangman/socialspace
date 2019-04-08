@@ -4,51 +4,44 @@
 
         <div class="main-container">
             <div class="contact-us"  [ngClass]="showGalaxy ? 'contact-us-active':''">
+                <!-- <div class="moon-container"></div> -->
                 <div class="form-container" [ngClass]="showGalaxy ? 'form-container-active':'' ">
-                    <form  class="contact-form" [ngClass]="showGalaxy ? 'contact-form-active':'contact-form-static'" [formGroup]="contactForm" (ngSubmit)="onSubmit() ">
-                        <div class="form-row">
-                                <div class="col">
+ 
+                            <div class="jumbotron jumbotron-fluid contact-form" [ngClass]="showGalaxy ? 'contact-form-active':'contact-form-static'">
+                                <div class="container">
                                     <h3 class="display-4"> Contact Us</h3>
                                     <hr class="contact-line" [ngClass]="showGalaxy ? 'contact-line-active':''">
-                                    <div class="form-group">
-                                            <label for="FirstName">Name</label>
-                                            <input formControlName="name" type="text" class="form-control" id="exampleInputPassword1" placeholder="Name" required>
-                                            <small style="color:red"   *ngIf="!nameValid">First Name is required</small>
-                                   
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Email">Email address</label>
-                                        <input formControlName="emailAddress" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                                        <small id="emailHelp" *ngIf="emailValid" class="form-text">We'll never share your email with anyone else.</small>
-                                        <small style="color:red" *ngIf="!emailValid">Email address is invalid</small>
+                                    <div class="contact-information">
+                                      
+                                            <div class="contact-category">
+                                                    <div class="form-group">
+                                                        <label for="Email">Drop us an email </label>
+                                                        <h5 style="background-color: transparent" >info@socialspace.co.za</h5>                                                
+                                                    </div>
+                                            </div>
+                                            <div class="contact-category">
+                                                    <div class="form-group">
+                                                        <label for="Email">Or Send us a direct message on our social pages</label>                                                                                                   
+                                                    </div>
+                                            </div>
 
                                     </div>
-                                    <div class="form-group">
-                                        <label for="Detail">Additional Information</label>
-                                        <textarea  formControlName="details" style="max-height: 150px" type="text" class="form-control" id="exampleInputPassword1" placeholder="Fill in any questions or queries"></textarea>
+                                    <div class="contact-category">
+                                            <div class="form-group">
+                                                <label for="Email">We'll see you soon!</label>                                                                                                   
+                                            </div>
                                     </div>
-                                    <label for="Handle">Instagram Handle</label>
-                                    <div class="input-group mb-3">
-                                        
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1">@</span>
-                                        </div>
-                                        <input formControlName="instagram" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
-                                    </div>
-                                    <small style="color:red" *ngIf="!instagramValid">IG Handle not valid</small>
-
                                 </div>
-                             
                             </div>
-                    </form>
-                    <div class="spaceman-container" (mouseover)="showGalaxy=true" >
+                
+                    <div class="spaceman-container" [ngClass]="WebpSupported ? 'spaceman-container-webp': 'spaceman-container-png'" (mouseover)="showGalaxy=true" >
                         <div class="spaceman"></div>
-                        <div class="submit">
-                            <button *ngIf="!submitted" (click)="onSubmit()" (mouseover)="showGalaxy=true" class="btn-lg exo submit-button">Send</button>
-                            <span *ngIf="submitted"><b>Thanks! We'll send a reply as soon as we can!</b></span>
+                        <div class="submit" >
+                            <a target="_" href="https://www.instagram.com/socialspace.co.za/" (mouseover)="showGalaxy=true" class="btn-lg exo Instagram-button submit-button">Instagram</a>
+                            <a target="_" href="https://www.facebook.com/Social-Space-437543070109584" (mouseover)="showGalaxy=true" class="btn-lg exo facebook-button submit-button">Facebook</a>                               
                         </div>
-                        <re-captcha class="captcha" (resolved)="resolved($event)" siteKey="6Lepj4YUAAAAABFWM21Q0M5TetnJK5pwpt5sOHHH"></re-captcha>
                     </div>
+
                 </div>
                 
             </div>
