@@ -17,6 +17,7 @@ import { Page3Component } from './page3/page3.component';
 import { Page4Component } from './page4/page4.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { FacebookModule } from 'ngx-facebook';
 
 import { DeviceDetectorService } from 'ngx-device-detector';
 
@@ -47,6 +48,7 @@ var  config = {
     FormsModule,
     NgbModule,
     ScrollToModule.forRoot(),
+    FacebookModule.forRoot(),
   ],
   providers: [AngularFireFunctions,DeviceDetectorService],
   bootstrap: [AppComponent]

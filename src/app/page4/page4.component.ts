@@ -36,7 +36,6 @@ export class Page4Component implements OnInit {
   
 
   resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response ${captchaResponse}:`);
     this.captchaValid = captchaResponse;
   }
 
