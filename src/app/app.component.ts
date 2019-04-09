@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebpService } from './services/webp.service';
-import { FacebookService, InitParams } from 'ngx-facebook';
+// import { FacebookService, InitParams } from 'ngx-facebook';
 
 @Component({
 	selector: 'app-root',
@@ -12,17 +12,17 @@ export class AppComponent implements OnInit{
 	WebglSupported: Boolean;
 
 	ngOnInit(){
-		this.initFacebookService();
+		// this.initFacebookService();
 	}
 
-	constructor(private webpService : WebpService,private facebookService: FacebookService) {
+	constructor(private webpService : WebpService) {
 		console.log(webpService.detectDevice())
 	}
 
-	private initFacebookService(): void {
-		const initParams: InitParams = { xfbml: true, version: 'v3.2' };
-		this.facebookService.init(initParams);
-	}
+	// private initFacebookService(): void {
+	// 	const initParams: InitParams = { xfbml: true, version: 'v3.2' };
+	// 	this.facebookService.init(initParams);
+	// }
 
 
 
